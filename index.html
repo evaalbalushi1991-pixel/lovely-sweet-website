@@ -3,217 +3,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lovely Sweet | لوفلي سويت</title>
+  <title>Lovely Sweet | لوفلي سويت 🍬</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --pink:    #f48fb1;
-      --rose:    #e91e63;
-      --gold:    #f9a825;
-      --light:   #fce4ec;
-      --white:   #ffffff;
-      --dark:    #3e2723;
-      --gray:    #f5f5f5;
+      --gold:    #3bbfb8;
+      --gold2:   #6de0d8;
+      --dark:    #0e0e0e;
+      --dark2:   #1a1a1a;
+      --dark3:   #252525;
+      --cream:   #f5e6c8;
+      --text:    #e8dcc8;
+      --muted:   #8a7a65;
     }
 
     body {
       font-family: 'Cairo', sans-serif;
-      background: var(--white);
-      color: var(--dark);
+      background: var(--dark);
+      color: var(--text);
       direction: rtl;
     }
 
     /* ── HEADER ── */
     header {
       position: sticky; top: 0; z-index: 100;
-      background: var(--white);
-      box-shadow: 0 2px 20px rgba(233,30,99,.12);
+      background: rgba(14,14,14,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(59,191,184,.2);
       padding: 0 40px;
       display: flex; align-items: center; justify-content: space-between;
       height: 70px;
     }
     .logo {
-      font-size: 1.6rem; font-weight: 900;
-      background: linear-gradient(135deg, var(--rose), var(--gold));
+      font-size: 1.5rem; font-weight: 900;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      text-decoration: none;
+      text-decoration: none; letter-spacing: 1px;
     }
     nav a {
-      margin-left: 28px; text-decoration: none; color: var(--dark);
-      font-weight: 600; font-size: .95rem; transition: color .2s;
+      margin-left: 28px; text-decoration: none; color: var(--muted);
+      font-weight: 600; font-size: .9rem; transition: color .2s;
     }
-    nav a:hover { color: var(--rose); }
+    nav a:hover { color: var(--gold); }
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(135deg, #fce4ec 0%, #fff9c4 50%, #fce4ec 100%);
-      padding: 90px 40px;
+      background: linear-gradient(145deg, #0e0e0e 0%, #1a1208 60%, #0e0e0e 100%);
+      padding: 100px 40px;
       text-align: center;
       position: relative; overflow: hidden;
+      border-bottom: 1px solid rgba(59,191,184,.15);
     }
     .hero::before {
-      content: '🍬🍰🎂🍫🧁';
-      position: absolute; top: 10px; right: 0; left: 0;
-      font-size: 2.5rem; letter-spacing: 20px; opacity: .15;
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(59,191,184,.12) 0%, transparent 70%);
+    }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid rgba(59,191,184,.4);
+      color: var(--gold); padding: 6px 18px; border-radius: 50px;
+      font-size: .85rem; font-weight: 600; margin-bottom: 24px;
+      background: rgba(59,191,184,.07);
     }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2rem, 5vw, 3.8rem);
       font-weight: 900;
-      background: linear-gradient(135deg, var(--rose), var(--gold));
+      background: linear-gradient(135deg, var(--gold2) 0%, var(--gold) 50%, #b8860b 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      margin-bottom: 16px;
+      margin-bottom: 18px; line-height: 1.25;
     }
     .hero p {
-      font-size: 1.2rem; color: #78577a; max-width: 550px; margin: 0 auto 32px;
+      font-size: 1.1rem; color: var(--muted);
+      max-width: 520px; margin: 0 auto 36px; line-height: 1.8;
     }
-    .btn-primary {
+    .btn-gold {
       display: inline-block;
-      background: linear-gradient(135deg, var(--rose), #e91e8c);
-      color: #fff; padding: 14px 40px; border-radius: 50px;
-      font-size: 1.1rem; font-weight: 700; text-decoration: none;
-      box-shadow: 0 6px 20px rgba(233,30,99,.35);
+      background: linear-gradient(135deg, var(--gold), #1a8c85);
+      color: var(--dark); padding: 14px 42px; border-radius: 50px;
+      font-size: 1rem; font-weight: 900; text-decoration: none;
+      box-shadow: 0 6px 24px rgba(59,191,184,.35);
       transition: transform .2s, box-shadow .2s;
     }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(233,30,99,.45); }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(59,191,184,.5); }
 
-    /* ── SECTION TITLES ── */
-    section { padding: 70px 40px; }
-    .section-title {
-      text-align: center; margin-bottom: 50px;
+    /* ── DIVIDER ── */
+    .gold-line {
+      width: 80px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      border-radius: 3px; margin: 14px auto 0;
     }
+
+    /* ── SECTION ── */
+    section { padding: 80px 40px; }
+    .section-title { text-align: center; margin-bottom: 52px; }
     .section-title h2 {
-      font-size: 2rem; font-weight: 900; color: var(--dark);
-      position: relative; display: inline-block;
+      font-size: 1.9rem; font-weight: 900;
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .section-title h2::after {
-      content: ''; display: block; width: 60%; height: 4px;
-      background: linear-gradient(90deg, var(--rose), var(--gold));
-      border-radius: 4px; margin: 10px auto 0;
-    }
-    .section-title p { color: #888; margin-top: 10px; font-size: 1rem; }
+    .section-title p { color: var(--muted); margin-top: 10px; font-size: .95rem; }
 
     /* ── PRODUCTS ── */
-    #products { background: var(--gray); }
+    #products { background: var(--dark2); }
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 28px;
-      max-width: 1100px; margin: 0 auto;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px; max-width: 1100px; margin: 0 auto;
     }
     .product-card {
-      background: var(--white); border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,.07);
-      transition: transform .3s, box-shadow .3s;
+      background: var(--dark3);
+      border: 1px solid rgba(59,191,184,.12);
+      border-radius: 16px; overflow: hidden;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
       animation: fadeUp .5s ease both;
     }
-    .product-card:hover { transform: translateY(-8px); box-shadow: 0 12px 32px rgba(233,30,99,.15); }
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(59,191,184,.4);
+      box-shadow: 0 16px 40px rgba(0,0,0,.4);
+    }
     .product-img {
-      height: 180px; width: 100%;
+      height: 200px; width: 100%;
       display: flex; align-items: center; justify-content: center;
-      font-size: 4rem;
+      font-size: 4.5rem; position: relative; overflow: hidden;
     }
-    .product-body { padding: 20px; }
-    .product-name { font-size: 1.15rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
-    .product-desc { font-size: .88rem; color: #888; margin-bottom: 14px; line-height: 1.6; }
+    .product-img:not(:has(img))::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, var(--dark3) 100%);
+    }
+    .product-body { padding: 18px 20px 22px; }
+    .product-name { font-size: 1.05rem; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+    .product-desc { font-size: .85rem; color: var(--muted); margin-bottom: 14px; line-height: 1.7; }
     .product-footer { display: flex; align-items: center; justify-content: space-between; }
-    .price { font-size: 1.2rem; font-weight: 900; color: var(--rose); }
-    .price span { font-size: .8rem; font-weight: 400; color: #aaa; }
-    .btn-order {
+    .price { font-size: 1.1rem; font-weight: 900; color: var(--gold); }
+    .price small { font-size: .75rem; font-weight: 400; color: var(--muted); }
+    .btn-wa {
       background: linear-gradient(135deg, #25d366, #128c7e);
-      color: #fff; border: none; padding: 10px 20px;
+      color: #fff; border: none; padding: 9px 18px;
       border-radius: 50px; font-family: 'Cairo', sans-serif;
-      font-size: .9rem; font-weight: 700; cursor: pointer;
-      text-decoration: none; display: inline-block;
-      transition: opacity .2s;
+      font-size: .88rem; font-weight: 700; cursor: pointer;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+      transition: opacity .2s, transform .2s;
     }
-    .btn-order:hover { opacity: .85; }
+    .btn-wa:hover { opacity: .88; transform: scale(1.04); }
 
     /* ── ABOUT ── */
-    #about {
-      background: linear-gradient(135deg, #fce4ec, #fff9c4);
-      text-align: center;
+    #about { background: var(--dark); text-align: center; }
+    .about-inner {
+      max-width: 680px; margin: 0 auto;
+      background: var(--dark3); border: 1px solid rgba(59,191,184,.15);
+      border-radius: 24px; padding: 48px 40px;
     }
-    .about-content { max-width: 700px; margin: 0 auto; }
-    .about-content p { font-size: 1.05rem; line-height: 1.9; color: #5a3e4b; }
-    .about-emoji { font-size: 3.5rem; margin-bottom: 20px; }
+    .about-icon { font-size: 3.5rem; margin-bottom: 18px; }
+    .about-inner p { font-size: 1rem; line-height: 1.9; color: var(--muted); }
+    .about-inner strong { color: var(--gold); }
 
-    /* ── HOW TO ORDER ── */
-    #how { background: var(--white); }
-    .steps { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
+    /* ── STEPS ── */
+    #how { background: var(--dark2); }
+    .steps { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
     .step {
       flex: 1 1 220px; text-align: center;
-      background: var(--light); border-radius: 20px; padding: 36px 24px;
-      transition: transform .3s;
+      background: var(--dark3); border: 1px solid rgba(59,191,184,.12);
+      border-radius: 20px; padding: 36px 24px;
+      transition: border-color .3s, transform .3s;
     }
-    .step:hover { transform: translateY(-6px); }
-    .step-icon { font-size: 3rem; margin-bottom: 16px; }
+    .step:hover { border-color: rgba(59,191,184,.4); transform: translateY(-5px); }
     .step-num {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--rose), var(--gold));
-      color: #fff; width: 32px; height: 32px; border-radius: 50%;
-      line-height: 32px; font-weight: 900; font-size: .9rem;
-      margin-bottom: 12px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--gold), #1a8c85);
+      color: var(--dark); width: 34px; height: 34px; border-radius: 50%;
+      font-weight: 900; font-size: .9rem; margin-bottom: 14px;
     }
-    .step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
-    .step p { font-size: .9rem; color: #888; line-height: 1.6; }
+    .step-icon { font-size: 2.8rem; margin-bottom: 14px; }
+    .step h3 { font-size: 1.05rem; font-weight: 700; color: var(--cream); margin-bottom: 8px; }
+    .step p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--dark);
-      color: #eee;
-      text-align: center;
-      padding: 50px 40px 30px;
+      background: #080808;
+      border-top: 1px solid rgba(59,191,184,.15);
+      text-align: center; padding: 56px 40px 32px;
     }
-    footer .footer-logo {
+    .footer-logo {
       font-size: 1.8rem; font-weight: 900;
-      background: linear-gradient(135deg, var(--pink), var(--gold));
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-    footer p { color: #bbb; font-size: .95rem; margin-bottom: 20px; }
+    footer > p { color: var(--muted); font-size: .92rem; margin-bottom: 24px; }
     .wa-btn {
       display: inline-flex; align-items: center; gap: 10px;
       background: #25d366; color: #fff;
-      padding: 14px 32px; border-radius: 50px;
+      padding: 14px 34px; border-radius: 50px;
       text-decoration: none; font-weight: 700; font-size: 1rem;
-      box-shadow: 0 4px 16px rgba(37,211,102,.4);
-      transition: transform .2s;
-      margin-bottom: 30px;
+      box-shadow: 0 4px 20px rgba(37,211,102,.3);
+      transition: transform .2s; margin-bottom: 28px;
     }
     .wa-btn:hover { transform: translateY(-3px); }
-    .payment-info {
-      background: rgba(255,255,255,.07); border-radius: 12px;
-      padding: 16px 30px; display: inline-block; margin-bottom: 24px;
-      font-size: .92rem; line-height: 1.8;
+    .payment-box {
+      background: var(--dark3); border: 1px solid rgba(59,191,184,.15);
+      border-radius: 14px; padding: 18px 32px;
+      display: inline-block; margin-bottom: 28px;
+      font-size: .92rem; line-height: 2; color: var(--muted);
     }
-    footer .copy { font-size: .8rem; color: #666; margin-top: 10px; }
+    .payment-box strong { color: var(--gold); }
+    .copy { font-size: .78rem; color: #3a3a3a; }
 
-    /* ── FLOATING WA ── */
+    /* ── FLOAT WA ── */
     .float-wa {
       position: fixed; bottom: 28px; left: 28px; z-index: 999;
       background: #25d366; color: #fff;
-      width: 60px; height: 60px; border-radius: 50%;
+      width: 58px; height: 58px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.8rem; box-shadow: 0 6px 20px rgba(37,211,102,.5);
+      box-shadow: 0 6px 24px rgba(37,211,102,.45);
       text-decoration: none; transition: transform .2s;
     }
     .float-wa:hover { transform: scale(1.12); }
 
-    /* ── ANIMATIONS ── */
+    /* ── ANIM ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
     }
 
     /* ── MOBILE ── */
     @media (max-width: 640px) {
       header { padding: 0 20px; }
-      nav a { margin-left: 14px; font-size: .85rem; }
-      .hero { padding: 60px 20px; }
-      section { padding: 50px 20px; }
+      nav a  { margin-left: 14px; font-size: .82rem; }
+      .hero, section { padding: 60px 20px; }
+      .about-inner { padding: 36px 24px; }
     }
   </style>
 </head>
@@ -221,7 +242,7 @@
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="#">🍬 Lovely Sweet</a>
+  <a class="logo" href="#">✦ Lovely Sweet</a>
   <nav>
     <a href="#products">المنتجات</a>
     <a href="#about">من نحن</a>
@@ -232,15 +253,18 @@
 
 <!-- HERO -->
 <div class="hero">
-  <h1>أحلى الحلويات<br/>لأحلى الناس 🍰</h1>
-  <p>حلويات فاخرة بأيدٍ عُمانية موهوبة — محضّرة بحب لكل المناسبات الخاصة</p>
-  <a href="#products" class="btn-primary">اكتشفي منتجاتنا</a>
+  <div class="hero-badge">🍬 حلويات عمانية فاخرة</div>
+  <h1>أحلى الحلويات<br/>لأحلى الناس</h1>
+  <div class="gold-line"></div>
+  <p style="margin-top:20px">حلويات مصنوعة بأيدٍ عُمانية موهوبة — محضّرة بحب ومكونات فاخرة لكل المناسبات</p>
+  <a href="#products" class="btn-gold">🛒 اكتشف المنتجات</a>
 </div>
 
 <!-- PRODUCTS -->
 <section id="products">
   <div class="section-title">
     <h2>منتجاتنا</h2>
+    <div class="gold-line"></div>
     <p>كل قطعة محضّرة بعناية واهتمام</p>
   </div>
   <div class="products-grid" id="productsGrid"></div>
@@ -248,13 +272,17 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="section-title"><h2>من نحن</h2></div>
-  <div class="about-content">
-    <div class="about-emoji">🎂</div>
+  <div class="section-title">
+    <h2>من نحن</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="about-inner">
+    <div class="about-icon">✦</div>
     <p>
-      <strong>Lovely Sweet</strong> متجر حلويات فاخر يقدّم أشهى وأجمل الحلويات المصنوعة يدوياً.
-      نؤمن أن كل مناسبة تستحق لمسة حلوة مميزة، ولذلك نحرص على اختيار أجود المكونات
-      وتقديم أجمل التصاميم التي تضفي فرحة على كل لحظة.
+      <strong>Lovely Sweet</strong> متجر حلويات عُماني متخصص في الكيك المزخرف والحلويات الفاخرة المصنوعة يدوياً.
+      <em>"simply elegant..simply delicious"</em>
+      <br/><br/>
+      من <strong>كيك عيد الميلاد</strong> المزخرف بأجمل التصاميم، إلى <strong>الطباعة على الشوكولاتة</strong>، وكيك الأكواب، والبيبي تشيز كيك، والرنجينة الأصيلة — كل صنف عندنا قصة من الذوق والاحتراف.
     </p>
   </div>
 </section>
@@ -262,79 +290,96 @@
 <!-- HOW TO ORDER -->
 <section id="how">
   <div class="section-title">
-    <h2>كيف تطلبين؟</h2>
+    <h2>كيف تطلب؟</h2>
+    <div class="gold-line"></div>
     <p>ثلاث خطوات بسيطة وطلبك في طريقه إليك</p>
   </div>
   <div class="steps">
     <div class="step">
       <div class="step-num">١</div>
-      <div class="step-icon">🛒</div>
-      <h3>اختاري منتجك</h3>
-      <p>تصفّحي كتالوجنا واختاري ما يناسبك من حلويات فاخرة</p>
+      <div class="step-icon">🛍️</div>
+      <h3>اختر منتجك</h3>
+      <p>تصفّح كتالوجنا واختر ما يناسبك من حلويات أصيلة وعصرية</p>
     </div>
     <div class="step">
       <div class="step-num">٢</div>
       <div class="step-icon">💬</div>
-      <h3>تواصلي معنا</h3>
-      <p>اضغطي "اطلب الآن" وسيفتح واتساب تلقائياً مع تفاصيل طلبك</p>
+      <h3>تواصل معنا</h3>
+      <p>اضغط "اطلب الآن" وسيفتح واتساب تلقائياً مع تفاصيل طلبك</p>
     </div>
     <div class="step">
       <div class="step-num">٣</div>
-      <div class="step-icon">💳</div>
-      <h3>ادفعي واستلمي</h3>
-      <p>أكملي الدفع بالتحويل البنكي واستلمي طلبك طازجاً بإذن الله</p>
+      <div class="step-icon">✅</div>
+      <h3>ادفع واستلم</h3>
+      <p>أكمل الدفع بالتحويل البنكي واستلم طلبك طازجاً ومغلفاً بعناية</p>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer id="footer">
-  <div class="footer-logo">🍬 Lovely Sweet</div>
-  <p>حلويات فاخرة بلمسة حب ✨</p>
-  <a href="https://wa.me/968XXXXXXXX" target="_blank" class="wa-btn">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    تواصلي معنا على واتساب
+  <div class="footer-logo">✦ Lovely Sweet</div>
+  <p>حلويات فاخرة · صناعة عُمانية أصيلة</p>
+  <a href="https://wa.me/96877417973" target="_blank" class="wa-btn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    تواصل معنا على واتساب
   </a>
-  <div class="payment-info">
-    💳 طريقة الدفع: تحويل بنكي<br/>
-    يُرسل رقم الحساب بعد تأكيد الطلب عبر واتساب
+  <div class="payment-box">
+    💳 <strong>طريقة الدفع:</strong> تحويل بنكي<br/>
+    يُرسل رقم الحساب عند تأكيد الطلب عبر واتساب
   </div>
   <p class="copy">© 2025 Lovely Sweet · جميع الحقوق محفوظة</p>
 </footer>
 
-<!-- FLOATING WA BUTTON -->
-<a href="https://wa.me/968XXXXXXXX" class="float-wa" target="_blank" title="واتساب">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- FLOATING WA -->
+<a href="https://wa.me/96877417973" class="float-wa" target="_blank">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-  const products = [
-    { emoji: '🎂', name: 'كيكة شوكولاتة فاخرة',   desc: 'كيكة إسفنجية بكريمة الشوكولاتة الداكنة وتزيين فاخر',      price: '5.000', bg: 'linear-gradient(135deg,#d7ccc8,#795548)' },
-    { emoji: '🍮', name: 'حلوى بالتمر والمكسرات',  desc: 'حلوى عمانية أصيلة بالتمر والمكسرات المحمصة',              price: '3.000', bg: 'linear-gradient(135deg,#ffe0b2,#e65100)' },
-    { emoji: '🍫', name: 'ترافل شوكولاتة',          desc: 'كرات شوكولاتة بلجيكية فاخرة مع ملمس ناعم ومذاق راقٍ',    price: '4.000', bg: 'linear-gradient(135deg,#d7ccc8,#4e342e)' },
-    { emoji: '🧁', name: 'كب كيك مزخرف',           desc: 'كب كيك طري بتزيين الكريمة الملوّنة المصمّمة بعناية',      price: '2.500', bg: 'linear-gradient(135deg,#fce4ec,#e91e63)' },
-    { emoji: '🍪', name: 'بسكويت بالزبدة',          desc: 'بسكويت هش ذهبي اللون بعجينة الزبدة الفرنسية الأصيلة',    price: '3.500', bg: 'linear-gradient(135deg,#fff9c4,#f9a825)' },
-    { emoji: '🍰', name: 'باوند كيك بالفانيلا',     desc: 'كيكة باوند كلاسيكية بأرق نكهة فانيلا وزبدة طبيعية',     price: '4.500', bg: 'linear-gradient(135deg,#f3e5f5,#9c27b0)' },
-  ];
+const products = [
+  { emoji:'🎂', name:'كيك مزخرف حسب الطلب',    desc:'كيك عيد ميلاد أو مناسبات مزخرف بتصاميم مخصصة — شخصيات، ورود، أي تصميم تريده', price:'حسب الطلب', unit:'', bg:'linear-gradient(135deg,#1a0a18,#4a1040)' },
+  { emoji:'☕', name:'كيك الأكواب',             desc:'كيك لذيذ يُقدَّم داخل كوب زجاجي أنيق — هدية مميزة لكل المناسبات',             price:'حسب الطلب', unit:'', bg:'linear-gradient(135deg,#1a1208,#3a2a10)' },
+  { emoji:'🍰', name:'بيبي تشيز كيك',           desc:'60 حبة تشيز كيك صغير بنكهات متنوعة — شوكولاتة، فستق، مانجو، ماتشا',          price:'10.000', unit:'60 حبة', bg:'linear-gradient(135deg,#1a1a0a,#4a4a18)', img:'https://cdn.jsdelivr.net/gh/evaalbalushi1991-pixel/lovely-sweet-website@main/img-cheesecake.jpg' },
+  { emoji:'🍫', name:'طباعة على الشوكولاتة',   desc:'شوكولاتة مخصصة مطبوع عليها صور وعبارات — هدية شخصية لا تُنسى',               price:'حسب الطلب', unit:'', bg:'linear-gradient(135deg,#100808,#2a1010)' },
+  { emoji:'🍬', name:'اشرطة السكر',             desc:'أشرطة سكر مزخرفة بعبارات مميزة تُلف حول أكواب الشاي والقهوة',                price:'حسب الطلب', unit:'', bg:'linear-gradient(135deg,#0e1a0a,#2a4a18)', img:'https://cdn.jsdelivr.net/gh/evaalbalushi1991-pixel/lovely-sweet-website@main/img-sugar-strips.jpg' },
+  { emoji:'🍮', name:'رنجينة',                  desc:'100 حبة من الرنجينة الأصيلة بالتمر والسمن العُماني',                          price:'13.000', unit:'100 حبة', bg:'linear-gradient(135deg,#2a1f0a,#5c3d0a)', img:'https://cdn.jsdelivr.net/gh/evaalbalushi1991-pixel/lovely-sweet-website@main/img-rangina.jpg' },
+  { emoji:'🫙', name:'صحن مشكل',               desc:'تشكيلة فاخرة: عين الجمل + معمول بالتمر + رنجينة — مثالي للهدايا',            price:'حسب الطلب', unit:'', bg:'linear-gradient(135deg,#1a1206,#4a3010)' },
+  { emoji:'🥨', name:'اصابع البريتزل بالتمر',  desc:'أصابع بريتزل مغطاة بتمر محشي وشوكولاتة فاخرة',                               price:'15.000', unit:'طبق', bg:'linear-gradient(135deg,#1a0d0d,#4a2020)' },
+  { emoji:'🍫', name:'كرانشي شوكولاتة بالجوز', desc:'أكثر من 150 قطعة كرانشي شوكولاتة مع جوز مغطى بالشوكولاتة',                  price:'14.000', unit:'150+ قطعة', bg:'linear-gradient(135deg,#12100a,#3d2b08)' },
+  { emoji:'🫘', name:'عين الجمل',              desc:'25 حبة مع العلبة — جوز مغطى بطريقة فاخرة في تغليف أنيق',                    price:'9.000', unit:'25 حبة + علبة', bg:'linear-gradient(135deg,#0a0e1a,#182a4a)' },
+  { emoji:'🧁', name:'مادلين كيك',             desc:'كعكات مادلين الفرنسية الهشة بنكهة الفانيلا والبرتقال',                        price:'حسب الطلب', unit:'', bg:'linear-gradient(135deg,#1a0a12,#4a1030)' },
+  { emoji:'🍫', name:'شوكولاتة مشكل',          desc:'118 حبة من الشوكولاتة المشكلة الفاخرة في صندوق هدايا فخم',                   price:'17.000', unit:'118 حبة', bg:'linear-gradient(135deg,#0e0a0a,#2a1818)' },
+];
 
-  const grid = document.getElementById('productsGrid');
-  products.forEach((p, i) => {
-    const waMsg = encodeURIComponent(`مرحباً، أريد طلب ${p.name} من Lovely Sweet 🍬`);
-    const card = document.createElement('div');
-    card.className = 'product-card';
-    card.style.animationDelay = `${i * 0.1}s`;
-    card.innerHTML = `
-      <div class="product-img" style="background:${p.bg}">${p.emoji}</div>
-      <div class="product-body">
-        <div class="product-name">${p.name}</div>
-        <div class="product-desc">${p.desc}</div>
-        <div class="product-footer">
-          <div class="price">${p.price} <span>ر.ع</span></div>
-          <a class="btn-order" href="https://wa.me/968XXXXXXXX?text=${waMsg}" target="_blank">🛒 اطلب الآن</a>
-        </div>
-      </div>`;
-    grid.appendChild(card);
-  });
+const grid = document.getElementById('productsGrid');
+products.forEach((p,i) => {
+  const waMsg = encodeURIComponent(`مرحباً، أريد طلب "${p.name}"${p.unit ? ' ('+p.unit+')' : ''} من Lovely Sweet 🍬`);
+  const priceHtml = p.price === 'حسب الطلب'
+    ? `<div class="price" style="color:var(--gold2);font-size:.95rem">حسب الطلب</div>`
+    : `<div class="price">${p.price} <small>ر.ع</small></div>`;
+  const card = document.createElement('div');
+  card.className = 'product-card';
+  card.style.animationDelay = `${i*0.08}s`;
+  const imgContent = p.img
+    ? `<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;display:block;">`
+    : p.emoji;
+  const imgStyle = p.img ? '' : `style="background:${p.bg}"`;
+  card.innerHTML = `
+    <div class="product-img" ${imgStyle}>${imgContent}</div>
+    <div class="product-body">
+      <div class="product-name">${p.name}</div>
+      <div class="product-desc">${p.desc}</div>
+      <div class="product-footer">
+        ${priceHtml}
+        <a class="btn-wa" href="https://wa.me/96877417973?text=${waMsg}" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          اطلب الآن
+        </a>
+      </div>
+    </div>`;
+  grid.appendChild(card);
+});
 </script>
 </body>
 </html>
